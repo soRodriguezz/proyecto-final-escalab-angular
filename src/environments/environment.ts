@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_BASE: 'https://reqres.in/'
+  URL_BASE: 'http://ddragon.leagueoflegends.com/cdn',
 };
 
 /*

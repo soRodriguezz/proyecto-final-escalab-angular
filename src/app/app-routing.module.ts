@@ -4,20 +4,27 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: 'champions',
     loadChildren: () =>
-      import('./auth/login/login.module').then((m) => m.LoginModule),
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'profile',
-    loadChildren: () =>
-      import('./components/profile/profile.module').then(
-        (m) => m.ProfileModule
+      import('./components/champions/champions.module').then(
+        (m) => m.ChampionsModule
       ),
     canActivate: [AuthGuard],
   },
-  { path: '**', pathMatch: 'full', redirectTo: '/profile' },
+  {
+    path: 'items',
+    loadChildren: () =>
+      import('./components/items/items.module').then((m) => m.ItemsModule),
+      canActivate: [AuthGuard],
+  },
+  {
+    path: 'skins',
+    loadChildren: () =>
+      import('./components/skins/skins.module').then((m) => m.SkinsModule),
+      canActivate: [AuthGuard],
+  },
+
+  { path: '**', pathMatch: 'full', redirectTo: '/skins' },
 ];
 
 @NgModule({
