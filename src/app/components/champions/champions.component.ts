@@ -4,8 +4,7 @@ import { ChampionsService } from 'src/app/services/champions.service';
 
 @Component({
   selector: 'app-champions',
-  templateUrl: './champions.component.html',
-  styleUrls: ['./champions.component.css']
+  templateUrl: './champions.component.html'
 })
 export class ChampionsComponent{
   public champion: any;

@@ -4,8 +4,7 @@ import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  templateUrl: './items.component.html'
 })
 export class ItemsComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
