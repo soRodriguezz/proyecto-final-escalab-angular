@@ -1,27 +1,36 @@
-# ProyectoFinalEscalab
+# Proyecto final Escalab
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+Este repositorio contiene el proyecto final del curso de Angular. El proyecto esta basado en la versión *12.3.1* del juego **League Of Legends**.
 
-## Development server
+### Descripción
+El proyecto contiene un login con Auth0, logueandose con Google. Una vez logueado, se muestra el menú *Inicio*, listando los campeones del juego, skins por campeón en un modal y nombre de skins. A su vez, al presionar *Items*, muestra una tabla paginada con posibilidad de cambiar la cantidad de paginado. Por último, en el menú *Champions* se muestra un 'Input' para realizar la búsqueda por nombre del campeón con su respectiva validación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Pre-requisitios
+* Angular 13.x
+* Node 16.x
+* npm 8.x
 
-## Code scaffolding
+### Comandos
+* Para ejecutar el proyecto usar `ng serve -0`
+* Para obtener proyecto productivo usar `ng build`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Librerías
+* @ng-bootstrap/ng-bootstrap: 11.0.0
+* angular-datatables: 6.0.0
+* bootstrap: 5.1.3
+* datatables.net: 1.11.3
+* datatables.net-dt: 1.11.3
+* jquery: 3.6.0
+* @auth0/auth0-angular: 1.9.0
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Librerias de desarrollo:
+* @types/datatables.net: 1.10.21
+* @types/jquery: 3.5.9
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Enlaces API
+* https://ddragon.leagueoflegends.com/cdn/12.3.1/data/es_ES/champion.json
+* http://ddragon.leagueoflegends.com/cdn/12.3.1/data/es_ES/champion/Aatrox.json
+* https://ddragon.leagueoflegends.com/cdn/12.3.1/data/es_ES/item.json
+* http://ddragon.leagueoflegends.com/cdn/12.3.1/img/item/1001.png
+* http://ddragon.leagueoflegends.com/cdn/12.3.1/data/es_ES/summoner.json
