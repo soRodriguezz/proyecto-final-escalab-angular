@@ -1,50 +1,69 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a *ngIf="auth.user$ | async as user" class="nav-link" [routerLinkActive]="'active'"routerLink="/skins">Inicio</a>
-          
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            *ngIf="auth.user$ | async as user"
-            routerLink="/items"
-            [routerLinkActive]="'active'"
-            >Items</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            *ngIf="auth.user$ | async as user"
-            routerLink="/champions"
-            [routerLinkActive]="'active'"
-            >Champions</a>
-        </li>
-      </ul>
-      <ul *ngIf="auth.user$ | async as user" class="nav justify-content-end m-2">
-        {{user.name}}
-      </ul>
-      <form class="d-flex">
-        <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              *ngIf="auth.user$ | async as user"
+              class="nav-link"
+              [routerLinkActive]="'active'"
+              routerLink="/skins"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              *ngIf="auth.user$ | async as user"
+              routerLink="/items"
+              [routerLinkActive]="'active'"
+              >Items</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              *ngIf="auth.user$ | async as user"
+              routerLink="/champions"
+              [routerLinkActive]="'active'"
+              >Champions</a
+            >
+          </li>
+        </ul>
+        <ul
+          *ngIf="auth.user$ | async as user"
+          class="nav justify-content-end m-2"
+        >
+          {{
+            user.name
+          }}
+        </ul>
+        <form class="d-flex">
           <button
             class="btn btn-outline-danger"
             (click)="auth.logout({ returnTo: document.location.origin })"
           >
-            Log out
+            Cerrar sesión
           </button>
-        </ng-container>
+        </form>
+      </div>
+    </div>
+  </nav>
+</ng-container>
 
-        <ng-template #loggedOut>
-          <button
-            class="btn btn-outline-success"
-            (click)="auth.loginWithRedirect()"
-          >
-            Log in
-          </button>
-        </ng-template>
-      </form>
+<ng-template #loggedOut>
+  <div class="row p-5 m-5">
+    <div class="col">
+      <h5 class="card-title text-center">Bienvenid@ a la APP de LOL</h5>
+      <div class="d-grid gap-2 col-4 mx-auto mt-5">
+        <button
+          (click)="auth.loginWithRedirect()"
+          class="btn btn-outline-success"
+        >
+          Iniciar sesión
+        </button>
+      </div>
     </div>
   </div>
-</nav>
+</ng-template>

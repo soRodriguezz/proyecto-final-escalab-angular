@@ -23,7 +23,6 @@ const routes: Routes = [
       import('./components/skins/skins.module').then((m) => m.SkinsModule),
       canActivate: [AuthGuard],
   },
-
   { path: '**', pathMatch: 'full', redirectTo: '/skins' },
 ];
 
