@@ -1,3 +1,4 @@
+import { ModalSkinsComponent } from './../modal-skins/modal-skins.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +8,8 @@ import { SkinsComponent } from './skins.component';
 
 @NgModule({
   declarations: [
-    SkinsComponent
+    SkinsComponent,
+    ModalSkinsComponent
   ],
   imports: [
     CommonModule,
